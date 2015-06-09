@@ -21,7 +21,7 @@ sudo service apache2 stop
 sudo apt-get -y install nginx-core nginx
 cd ..
 sudo apt-get -y install upstart # for some reason this is missing!
-echo 'echo "service portmap \$1" > /etc/init.d/portmap"' | sudo bash
+echo 'echo "service portmap \$1" > /etc/init.d/portmap' | sudo bash
 sudo chmod 755  /etc/init.d/portmap
 cd /opt
 sudo rm -rf ./sge6-fresh
