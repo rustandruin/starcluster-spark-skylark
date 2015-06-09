@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
+# NB: if you got this off github, the sge.tar.gz file is stored in the LFS
+# system, so you need to install git-lfs, delete this repo, and redownload the
+# repo to get the actual file (otherwise you just get a text pointer)
+
 # Instructions:
 # open a fresh Ubuntu Vivid AMI
 # copy this file, sge.tar.gz and scimage_13.04.py to ~
 # edit /etc/apt/sources.list first to enable multiverse for Vivid
 # then run this file from ~
 # save this instance as a new starcluster compatible AMI
+
 
 sudo apt-get -y update; sudo apt-get -y upgrade
 sudo apt-get -y install nfs-kernel-server nfs-common portmap
