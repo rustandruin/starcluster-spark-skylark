@@ -198,6 +198,8 @@ def install_build_utils():
     """docstring for configure_build"""
     apt_install(BUILD_UTILS_PKGS)
 
+def install_java():
+    apt_install('openjdk-7-jre')
 
 def install_gridscheduler():
     chdir(SRC_DIR)
@@ -494,6 +496,7 @@ def main():
     #install_openblas()
     #install_openmpi()
     #install_julia()
+    install_java()
     install_gridscheduler()
     install_condor()
     install_hadoop()
