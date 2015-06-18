@@ -33,7 +33,7 @@ class SparkInstaller(clustersetup.DefaultClusterSetup):
                 "mv %s %s" % (self.spark_directory, self.spark_home),
                 "cd %s" % self.spark_home,
                 'export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"',
-                "build/mvn -Phadoop-provided -Phadoop-2.4 -Dhadoop.version=2.4.0 -DskipTests clean package 2>&1 "
+                "build/mvn -Phadoop-provided -Phadoop-2.4 -Pyarn -Dhadoop.version=2.4.0 -DskipTests clean package 2>&1 "
             ]
             node.ssh.execute(' && '.join(instructions))
             log.info("...done building on %s" % node.alias)
